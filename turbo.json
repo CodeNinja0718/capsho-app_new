@@ -1,0 +1,33 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "test": {
+      "dependsOn": ["build"],
+      "outputs": []
+    },
+    "lint": {
+      "outputs": []
+    },
+    "deploy": {
+      "dependsOn": ["build", "lint"]
+    },
+    "dev": {
+      "cache": false
+    }
+  },
+  "globalEnv": [
+    "VUE_APP_INTERCOM_ID",
+    "VUE_APP_LOGTAIL_TOKEN",
+    "VUE_APP_API_KEY",
+    "VUE_APP_AUTH_DOMAIN",
+    "VUE_APP_PROJECT_ID",
+    "VUE_APP_STORAGE_BUCKET",
+    "VUE_APP_MESSAGING_SENDER_ID",
+    "VUE_APP_APP_ID",
+    "VUE_APP_PRO_COUPON_ID"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "capsho-app",
+  "version": "0.2.2",
+  "repository": "https://github.com/Capsho/capsho-app.git",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "./apps/*"
+  ],
+  "scripts": {
+    "start": "yarn workspace capsho-main dev",
+    "lint": "turbo run lint",
+    "build": "turbo run build",
+    "dev": "turbo run dev"
+  },
+  "devDependencies": {
+    "turbo": "^1.1.2"
+  },
+  "packageManager": "yarn@1.22.17"
+}

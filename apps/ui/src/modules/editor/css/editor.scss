@@ -1,0 +1,455 @@
+@import "src/css/quasar.variables";
+
+$primary   : #3333ff;
+$secondary : rgb(223, 223, 223);
+$accent    : #06c;
+
+$dark      : #1D1D1D;
+$dark-page : #121212;
+
+$positive  : #21BA45;
+$negative  : #C10015;
+$info      : #31CCEC;
+$warning   : #F2C037;
+
+$darkish: #3E3E3E;
+$dark-blue: #14142B;
+$light-blue: #F9F9FF;
+$readable-primary: #111;
+$readable-secondary: rgba(73, 56, 81, 0.53);
+
+$app-color: rgb(55, 53, 47);
+$app-color-0: rgba(55, 53, 47, 0.09);
+$app-color-1: rgba(55, 53, 47, 0.16);
+$app-color-2: rgba(55, 53, 47, 0.4);
+$app-color-3: rgba(55, 53, 47, 0.6);
+$app-color-4: #000;
+$app-color-5: rgba(55, 53, 47, 0.024);
+$app-color-6: rgba(55, 53, 47, 0.8);
+$app-color-7: rgba(30, 31, 33, 100);
+$app-color-icon: var($app-color);
+$app-color-icon-1: rgba(109, 110, 111, 100);
+
+$app-bg-color: #fff;
+$app-bg-color-0: rgba(135, 131, 120, 0.15);
+$app-bg-color-1: rgb(247, 246, 243);
+$app-bg-color-2: rgba(135, 131, 120, 0.15);
+
+$app-select-color-0: rgb(46, 170, 220);
+$app-select-color-1: rgba(45, 170, 219, 0.3);
+$app-select-color-2: #d9eff8;
+
+$app-editor-red: rgb(224, 62, 62);
+$app-editor-pink: rgb(173, 26, 114);
+$app-editor-blue: rgb(11, 110, 153);
+$app-editor-purple: rgb(105, 64, 165);
+$app-editor-teal: rgb(15, 123, 108);
+$app-editor-yellow: rgb(223, 171, 1);
+$app-editor-orange: rgb(217, 115, 13);
+$app-editor-brown: rgb(100, 71, 58);
+$app-editor-gray: rgb(155, 154, 151);
+
+$app-editor-red_background: rgb(251, 228, 228);
+$app-editor-pink_background: rgb(244, 223, 235);
+$app-editor-blue_background: rgb(221, 235, 241);
+$app-editor-purple_background: rgb(234, 228, 242);
+$app-editor-teal_background: rgb(221, 237, 234);
+$app-editor-yellow_background: rgb(251, 243, 219);
+$app-editor-orange_background: rgb(250, 235, 221);
+$app-editor-brown_background: rgb(233, 229, 227);
+$app-editor-gray_background: rgb(235, 236, 237);
+
+$app-editor-red_background_co: rgba(251, 228, 228, 0.3);
+$app-editor-pink_background_co: rgba(244, 223, 235, 0.3);
+$app-editor-blue_background_co: rgba(221, 235, 241, 0.3);
+$app-editor-purple_background_co: rgba(234, 228, 242, 0.3);
+$app-editor-teal_background_co: rgba(221, 237, 234, 0.3);
+$app-editor-yellow_background_co: rgba(251, 243, 219, 0.3);
+$app-editor-orange_background_co: rgba(250, 235, 221, 0.3);
+$app-editor-brown_background_co: rgba(233, 229, 227, 0.3);
+$app-editor-gray_background_co: rgba(235, 236, 237, 0.3);
+
+$app-editor-item-blue: rgba(0, 120, 223, 0.2);
+$app-editor-item-orange: rgba(245, 93, 0, 0.2);
+$app-editor-item-green: rgba(0, 135, 107, 0.2);
+$app-editor-item-pink: rgba(221, 0, 129, 0.2);
+$app-editor-item-brown: rgba(140, 46, 0, 0.2);
+$app-editor-item-red: rgba(255, 0, 26, 0.2);
+$app-editor-item-yellow: rgba(233, 168, 0, 0.2);
+$app-editor-item-default: rgba(206, 205, 202, 0.5);
+$app-editor-item-purple: rgba(103, 36, 222, 0.2);
+$app-editor-item-gray: rgba(155, 154, 151, 0.4);
+
+$app-editor-max-width: 720px;
+$app-editor-header-height: 45px;
+
+
+.editor {
+  height: 600px;
+  font-size: 1rem;
+  border-radius: 2rem;
+  color: $grey-3;
+  background-color: $app-subtitle;
+  padding: 1rem;
+
+  &:focus {
+    outline: none;
+  }
+
+  blockquote,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ol,
+  pre,
+  ul {
+    margin: 1rem 0;
+  }
+
+  p {
+    margin: 0.5rem 0;
+  }
+
+  blockquote:first-child,
+  h1:first-child,
+  h2:first-child,
+  h3:first-child,
+  h4:first-child,
+  h5:first-child,
+  h6:first-child,
+  ol:first-child,
+  p:first-child,
+  pre:first-child,
+  ul:first-child {
+    margin-top: 0;
+  }
+
+  h1:first-child {
+    padding-bottom: 6px;
+    margin-bottom: 1.2rem;
+  }
+
+  blockquote:last-child,
+  h1:last-child,
+  h2:last-child,
+  h3:last-child,
+  ol:last-child,
+  p:last-child,
+  pre:last-child,
+  ul:last-child {
+    margin-bottom: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.3;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    border-bottom: 1px solid $app-color-2;
+  }
+
+  h2 {
+    font-size: 2.6rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.8rem;
+  }
+
+  h5 {
+    font-size: 1.5rem;
+  }
+
+  h6 {
+    font-size: 1.2rem;
+  }
+
+  blockquote {
+    padding-left: 0;
+    border-left: none;
+    font-style: italic;
+  }
+
+  blockquote:empty {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  // placeholder
+  *.is-empty:nth-child(1)::before,
+  *.is-empty:nth-child(2)::before {
+    content: attr(data-placeholder);
+    float: left;
+    color: $grey-4;
+    pointer-events: none;
+    height: 0;
+    font-style: normal;
+  }
+
+  .draggable-block {
+    position: relative;
+    margin: 1rem 0;
+    &__button {
+      display: inline-flex;
+      border-radius: 6px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $app-bg-color-2;
+      }
+    }
+    &__grab-cursor {
+      cursor: move; /* fallback if grab cursor is unsupported */
+      cursor: grab;
+    }
+    &__grab-cursor:active {
+      cursor: grabbing;
+    }
+    &__content {
+      background: $app-header;
+      border: 2px solid #0D0D0D;
+      border-radius: 0.8rem;
+      padding: 2rem;
+    }
+  }
+
+  .details {
+    display: flex;
+
+    > button {
+      display: flex;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      padding: 0;
+
+      &::before {
+        content: '\2BC8';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1.5em;
+        height: 1.5em;
+      }
+    }
+
+    &.is-open > button::before {
+      content: '\2BC6';
+    }
+
+    > div {
+      flex: 1 1 auto;
+    }
+
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .image-view {
+    $root: &;
+
+    display: inline-block;
+    max-width: 100%;
+    line-height: 0;
+    float: none;
+    user-select: none;
+    vertical-align: baseline;
+
+    &--inline {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    &--block {
+      display: block;
+    }
+
+    &--left {
+      float: left;
+      margin-left: 0;
+      margin-right: 12px;
+    }
+
+    &--right {
+      float: right;
+      margin-left: 12px;
+      margin-right: 0;
+    }
+
+    &__body {
+      clear: both;
+      display: inline-block;
+      max-width: 100%;
+      outline-color: transparent;
+      outline-style: solid;
+      outline-width: 2px;
+      transition: all 0.2s ease-in;
+      position: relative;
+
+      &--focused:hover,
+      &--resizing:hover {
+        outline-color: transparent;
+      }
+
+      &__placeholder {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+      }
+
+      &__image {
+        cursor: pointer !important;
+        margin: 0;
+        border-radius: 0.5rem;
+      }
+    }
+
+    &.focus {
+      img {
+        outline: 2px solid $app-select-color-0;
+      }
+    }
+  }
+
+  .image-resizer {
+    border: 1px solid $app-select-color-1;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+    &__handler {
+      background-color: $app-editor-blue_background;
+      border: 1px solid $app-select-color-0;
+      border-radius: 6px;
+      box-sizing: border-box;
+      display: block;
+      height: 12px;
+      position: absolute;
+      width: 12px;
+      z-index: 2;
+
+      &--tl {
+        cursor: nw-resize;
+        left: -6px;
+        top: -6px;
+      }
+
+      &--tr {
+        cursor: ne-resize;
+        right: -6px;
+        top: -6px;
+      }
+
+      &--bl {
+        bottom: -6px;
+        cursor: sw-resize;
+        left: -6px;
+      }
+
+      &--br {
+        bottom: -6px;
+        cursor: se-resize;
+        right: -6px;
+      }
+    }
+  }
+}
+
+.ProseMirror {
+  outline: none;
+
+  > * + * {
+    margin-top: 0.75em;
+  }
+}
+
+.is-active {
+  color: $primary;
+}
+
+.dialog-button {
+  background-color: $app-bg-color-0;
+  border-radius: 6px;
+  color: $app-color;
+}
+
+.editor-output {
+  background-color: $app-editor-gray_background;
+  height: 650px;
+  max-width: 700px;
+}
+
+/********** Collaboration cursor ************/
+/* Give a remote user a caret */
+.collaboration-cursor__caret {
+  position: relative;
+  margin-left: -1px;
+  margin-right: -1px;
+  border-left: 1px solid $app-color;
+  border-right: 1px solid $app-color;
+  word-break: normal;
+  pointer-events: none;
+}
+
+/* Render the username above the caret */
+.collaboration-cursor__label {
+  position: absolute;
+  top: -1.4em;
+  left: -1px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  user-select: none;
+  color: $app-color;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px 3px 3px 0;
+  white-space: nowrap;
+}
+
+/********** Slash menu ************/
+.slash-menu-items {
+  padding: 0.6rem;
+  position: relative;
+  width: 100%;
+  max-width: 230px;
+  border-radius: 0.8rem;
+  background: $app-bg-color;
+  color: $app-color-7;
+  overflow: hidden;
+  font-size: 0.9rem;
+  box-shadow: 0 0 0 1px $app-bg-color-1, 0 8px 16px $app-bg-color-2;
+  border-color: $app-color-0;
+
+  &__item {
+     text-align: left;
+     background: transparent;
+     border-radius: 0.6rem;
+     border: 1px solid transparent;
+     padding: 0.2rem 0.4rem;
+
+    &.is-selected {
+       border-color: $app-color-1;
+     }
+
+    svg {
+      color: $app-color-icon-1;
+    }
+  }
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: modules/auth/services/authService.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: modules/auth/services/authService.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import {
+	createUserWithEmailAndPassword,
+	getAuth,
+	GoogleAuthProvider, sendEmailVerification, sendPasswordResetEmail,
+	signInWithEmailAndPassword,
+	signInWithPopup, signOut
+} from 'firebase/auth'
+import store from '@/store'
+import router from '@/router'
+import { getUserByDocId } from '@/services/dbService'
+
+/**
+ * Create user with email and password
+ * @param email
+ * @param password
+ */
+export function registerWithEmail({ email, password }) {
+	const auth = getAuth()
+	createUserWithEmailAndPassword(auth, email, password)
+		.then(async () => {
+			store.commit('app/logIn', true)
+			await router.push({ name: 'CreateProfile' })
+		}).catch((err) => {
+		alert(err.message)
+	})
+}
+
+/**
+ * Create user with gmail account
+ */
+export function signInWithGoogle() {
+	const auth = getAuth()
+	const googleProvider = new GoogleAuthProvider()
+	signInWithPopup(auth, googleProvider)
+		.then(async (userCredential) => {
+			await updateUserState(userCredential)
+		}).catch((err) => {
+		store.commit('app/setLoginError', err.message)
+	})
+}
+
+/**
+ * Sign in with email and password
+ * @param email
+ * @param password
+ */
+export function signInWithEmail({ email, password }) {
+	const auth = getAuth()
+	signInWithEmailAndPassword(auth, email, password)
+		.then(async (userCredential) => {
+			await updateUserState(userCredential)
+		}).catch((err) => {
+		store.commit('app/setLoginError', err.message)
+	})
+}
+
+/**
+ * Send verification email
+ */
+export function verifyEmail() {
+	const auth = getAuth()
+	sendEmailVerification(auth.currentUser).then(() => {
+		store.commit('app/setVerifyEmailError', 'We’ve sent you a verification email with a link inside. Just click on the link and when you\'re back here, refresh this browser to get started!')
+	}).catch((err) => {
+		store.commit('app/setVerifyEmailError', err.message)
+	})
+}
+
+/**
+ * Send reset password link
+ * @param email
+ */
+export function resetPassword(email) {
+	const auth = getAuth()
+	const user = auth.currentUser
+	if (user) {
+		email = user.email
+	}
+	sendPasswordResetEmail(auth, email)
+		.then(async () => {
+			if (user) {
+				logOut()
+			} else {
+				await router.push({ name: 'SignIn' })
+			}
+		}).catch((err) => {
+		console.error(err)
+	})
+}
+
+/**
+ * Log out and remove user from session storage
+ */
+export function logOut() {
+	const auth = getAuth()
+	signOut(auth)
+		.then(async () => {
+			sessionStorage.clear()
+			store.commit('app/logOut')
+			await router.push({ name: 'Home' })
+		}).catch((err) => {
+		alert(err.message)
+	})
+}
+
+/**
+ * Update user's details
+ * @param userCredential
+ * @returns {Promise&lt;void>}
+ */
+async function updateUserState(userCredential) {
+	store.commit('app/setVerifyEmailError', '')
+	store.commit('app/logIn', true)
+	const id = userCredential.user.toJSON().uid
+	const userData = await getUserByDocId(id)
+	if (userData) {
+		const obj = {
+			stripe_id: userData.stripe_id,
+			subscription: userData.subscription,
+			template: userData.template,
+			toneOfVoice: userData.tone_of_voice,
+			type: userData.type,
+			businessName: userData.business_name,
+			created_profile: userData.created_profile
+		}
+		store.commit('app/setUpdateUser', obj)
+		await router.push({ name: 'Dashboard' })
+	} else {
+		await router.push({ name: 'CreateProfile' })
+	}
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#fetchUser">fetchUser</a></li><li><a href="global.html#logOut">logOut</a></li><li><a href="global.html#registerWithEmail">registerWithEmail</a></li><li><a href="global.html#resetPassword">resetPassword</a></li><li><a href="global.html#signInWithEmail">signInWithEmail</a></li><li><a href="global.html#signInWithGoogle">signInWithGoogle</a></li><li><a href="global.html#updateUserState">updateUserState</a></li><li><a href="global.html#useAuth">useAuth</a></li><li><a href="global.html#useTemplate">useTemplate</a></li><li><a href="global.html#useUsersData">useUsersData</a></li><li><a href="global.html#verifyEmail">verifyEmail</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Wed Mar 09 2022 14:29:33 GMT+0700 (Indochina Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

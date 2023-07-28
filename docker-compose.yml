@@ -1,0 +1,48 @@
+version: "3.8"
+services:
+  frontend:
+    image: node:16.19.0
+    container_name: capsho_quasar_app
+    working_dir: /app
+    build:
+      dockerfile: Dockerfile
+      context: "./apps/ui"
+      target: "develop-stage"
+    volumes:
+      - "/app/node_modules"
+      - "./apps/ui:/app"
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+      - VUE_APP_LOGTAIL_TOKEN="${VUE_APP_LOGTAIL_TOKEN}"
+      - VUE_APP_INTERCOM_ID="${VUE_APP_INTERCOM_ID}"
+      - VUE_APP_DEV_API_KEY=${VUE_APP_DEV_API_KEY}"
+      - VUE_APP_DEV_AUTH_DOMAIN="${VUE_APP_DEV_AUTH_DOMAIN}"
+      - VUE_APP_DEV_PROJECT_ID="${VUE_APP_DEV_PROJECT_ID}"
+      - VUE_APP_DEV_STORAGE_BUCKET="${VUE_APP_DEV_STORAGE_BUCKET}"
+      - VUE_APP_DEV_MESSAGING_SENDER_ID="${VUE_APP_DEV_MESSAGING_SENDER_ID}"
+      - VUE_APP_DEV_APP_ID="${VUE_APP_DEV_APP_ID}"
+      - VUE_APP_DEV_MEASUREMENT_ID="${VUE_APP_DEV_MEASUREMENT_ID}"
+      - VUE_APP_API_KEY="${VUE_APP_API_KEY}"
+      - VUE_APP_AUTH_DOMAIN="${VUE_APP_AUTH_DOMAIN}"
+      - VUE_APP_PROJECT_ID="${VUE_APP_PROJECT_ID}"
+      - VUE_APP_STORAGE_BUCKET="${VUE_APP_STORAGE_BUCKET}"
+      - VUE_APP_MESSAGING_SENDER_ID="${VUE_APP_MESSAGING_SENDER_ID}"
+      - VUE_APP_APP_ID="${VUE_APP_APP_ID}"
+      - VUE_APP_MEASUREMENT_ID="${VUE_APP_MEASUREMENT_ID}"
+      - VUE_APP_GTAG_ID="${VUE_APP_GTAG_ID}"
+      - VUE_APP_PRO_COUPON_ID="${VUE_APP_PRO_COUPON_ID}"
+      - VUE_APP_UNSPLASH_ACCESS_KEY="${VUE_APP_UNSPLASH_ACCESS_KEY}"
+      - VUE_APP_UNSPLASH_SECRET_KEY="${VUE_APP_UNSPLASH_SECRET_KEY}"
+      - VUE_APP_PEXELS_API_KEY="${VUE_APP_PEXELS_API_KEY}"
+      - VUE_APP_PIXABAY_API_KEY="${VUE_APP_PIXABAY_API_KEY}"
+    entrypoint: /bin/sh -c
+    tty: true
+    command:
+      - |
+        yarn && npx quasar dev -m spa || (\
+        echo '⛔ `quasar dev` failed, but the container is running...' && \
+        tail -f /dev/null \
+        )
+    ports:
+      - "8080:8080"

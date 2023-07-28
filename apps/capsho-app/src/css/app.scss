@@ -1,0 +1,485 @@
+// app global css in SCSS form
+$darkish: #3E3E3E;
+$dark-blue: #14142B;
+$light-blue: #F9F9FF;
+$readable-primary: #111;
+$readable-secondary: rgba(73, 56, 81, 0.53);
+
+body {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+.main-module {
+  background: linear-gradient(295.81deg, #FBCD85 -23.19%, #FCFCFC 118.27%);
+}
+
+.auth-module {
+  background: linear-gradient(321.86deg, #FFFFFF 37.07%, #F5F4FF 91.59%);
+}
+
+.bg-default {
+  background: linear-gradient(321.86deg, #FFFFFF 37.07%, #F5F4FF 91.59%);
+}
+
+/********** Fonts **********/
+.inter-light {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+}
+.inter-regular {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+.inter-medium {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+.inter-bold {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+}
+.lexend-deca-light {
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: 300;
+}
+.lexend-deca-regular {
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: 400;
+}
+.lexend-deca-medium {
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: 500;
+}
+.lexend-bold {
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: 600;
+}
+.lexend-light {
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: 300;
+}
+.lexend-regular {
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: 400;
+}
+.lexend-medium {
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: 500;
+}
+.lexend-bold {
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: 600;
+}
+.dm-sans-regular {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+}
+.dm-sans-medium {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+}
+.dm-sans-bold {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+}
+.source-serif-pro-regular {
+  font-family: 'Source Serif Pro', serif;
+}
+.monserrat-regular {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.poppins-regular {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.poppins-medium {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+.poppins-semibold {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.robot-regular {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.robot-medium {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+/********** Font sizes **********/
+.text-10 {
+  font-size: 10px;
+}
+.text-12 {
+  font-size: 12px;
+}
+.text-13 {
+  font-size: 13px;
+}
+.text-14 {
+  font-size: 14px;
+  font-size: clamp(13px, 2vw, 14px);
+}
+.text-15 {
+  font-size: 15px;
+  font-size: clamp(13px, 2vw, 15px);
+}
+.text-16 {
+  font-size: 16px;
+  font-size: clamp(14px, 2vw, 16px);
+}
+.text-18 {
+  font-size: 18px;
+  font-size: clamp(0.8rem, 2vw, 18px);
+}
+.text-18 {
+  font-size: 18px;
+}
+.text-20 {
+  font-size: 20px;
+}
+.text-22 {
+  font-size: 22px;
+}
+.text-25 {
+  font-size: 25px;
+}
+.text-40 {
+  font-size: 40px;
+}
+
+/********** Text styles **********/
+.letter-spacing-1 {
+  letter-spacing: 1px;
+}
+.text-underline {
+  text-decoration: underline;
+}
+
+.tooltip-text {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  background: #F5F4FF;
+  border-radius: 16px;
+  max-width: 320px;
+  padding: 24px;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 28px;
+  letter-spacing: 0.75px;
+  color: $dark-blue;
+}
+
+.blurred-text {
+  font-size: 17px;
+  line-height: 2.5;
+  color: $darkish;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  filter: blur(3.5px);
+  -webkit-filter: blur(3.5px);
+}
+
+.readable-text {
+  font-size: 17px;
+  line-height: 2.5;
+  color: $darkish;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+}
+
+.text-grey-secondary {
+  color: $readable-secondary;
+}
+
+/********** Borders **********/
+.border-radius-6 {
+  border-radius: 6px;
+}
+.border-radius-10 {
+  border-radius: 10px;
+}
+.border-radius-23 {
+  border-radius: 23px;
+}
+
+/********** Margins **********/
+.mt-8{
+  margin-top: 8px;
+}
+.mt-30{
+  margin-top: 30px;
+}
+.mr-30{
+  margin-right: 30px;
+}
+.mr-48 {
+  margin-right: 48px;
+}
+.mt-58 {
+  margin-top: 58px;
+}
+.mb-50 {
+  margin-bottom: 50px !important;
+}
+.mb-80 {
+  margin-bottom: 80px !important;
+}
+.mb-90 {
+  margin-bottom: 90px !important;
+}
+/********** Paddings **********/
+.pt-58 {
+  padding-top: 58px;
+}
+/********** Custom colors **********/
+.custom-green {
+  color: rgb(16, 201, 122);
+}
+.custom-red {
+  color: #C9105F;
+}
+.custom-dark-blue {
+  color: rgb(18 24 38/1);;
+}
+.grayscale {
+  color: $dark-blue;
+}
+.text-orange-brand {
+  color: rgba(251, 205, 133, 1) !important;
+}
+.bg-orange-brand {
+  background: rgba(251, 205, 133, 1) !important;
+}
+
+.text-button-dark-blue {
+  color: rgb(41 48 64/1) !important;
+}
+.bg-button-dark-blue {
+  background: rgb(41 48 64/1) !important;
+}
+
+.curtain {
+  height: 530px;
+  border-radius: 0 0 350px 0;
+}
+
+.text-darkish {
+  color: $darkish;
+}
+
+.text-label {
+  color: #727272;
+}
+
+.bg-primary-light-blue {
+  background: $light-blue;
+}
+
+/********** Loading **********/
+.loading-text {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 35px;
+  text-align: center;
+  font-feature-settings: 'salt' on, 'liga' off;
+}
+.loading-img {
+  border-radius: 17px;
+  //max-width: 650px;
+  width: 80%;
+}
+
+/********** Buttons **********/
+.app-button {
+  border-color: $app-border-color;
+  border-radius: 6px;
+}
+
+.btn-grey {
+  background-color: rgb(41 48 64/1);
+}
+
+
+/********** Inputs **********/
+@-webkit-keyframes autofill {
+  to {
+    color: inherit;
+    background: transparent;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+  -webkit-box-shadow:0 0 0 50px white inset;
+}
+
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 50px white inset;
+}
+
+/********** Others **********/
+.q-field--outlined .q-field__control {
+  background: none !important;
+  border-radius: 6px;
+  border: inherit;
+  font-size: clamp(14px, 2vw, 16px);
+  padding: 0 18px;
+  min-height: 40px;
+}
+
+.q-field__append {
+  height: inherit;
+}
+.q-field--highlighted .q-field__label {
+  color: rgba(0,0,0,0.2);
+}
+.q-field--highlighted .q-field__shadow {
+  opacity: 0.5;
+}
+.q-field--outlined .q-field__control:hover:before,
+.q-field--outlined .q-field__control:before {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.form-input {
+  background: none !important;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.app-input {
+  align-items: center;
+  padding: 0;
+  height: 41px;
+  background: rgba(245, 245, 245, 0.2);
+  &:focus {
+    border: 1.43119px solid #6267DA;
+    box-shadow: 0 0 4px #6267DA;
+  }
+}
+
+/********** Others **********/
+.custom-label {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 29px;
+  //letter-spacing: 0.324713px;
+  //color: #717171;
+  color: $readable-secondary;
+}
+
+.custom-toggle-label {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  color: #6267DA;
+}
+
+//.q-toggle__track {
+//  background-color: #6267DA !important;
+//  height: 21px !important;
+//  border-radius: 20px !important;
+//  margin-top: -3px !important;
+//}
+
+.q-drawer {
+  z-index: 99 !important;
+}
+
+/********** Upgrade to a plan **********/
+.apply-border {
+  border: 1px solid rgba(20, 20, 43, 0.3);
+  border-radius: 20px;
+}
+.card-wrapper {
+  position: absolute;
+  border-radius: 50px;
+  width: 100%;
+  max-width: 659px;
+  margin: 0 auto;
+}
+.upgrade-card {
+  border-radius: 34px;
+  margin: 0 auto;
+  min-height: 50vh;
+  max-height: 80vh;
+  &__actions {
+    position: absolute;
+    left: 0;
+    top: -136px;
+  }
+}
+.upgrade-container {
+  position: relative;
+}
+
+/********** Sign up Progress Bar **********/
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 12px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+.progress {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 8px;
+  border-radius: 3px;
+  background-color: #E4E6E8;
+  box-shadow: none;
+}
+.progress__bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  -webkit-transition: width 0.6s ease;
+  -o-transition: width 0.6s ease;
+  transition: width 0.6s ease;
+  background-color: $accent;
+  border-radius: 3px;
+}
+.progress__bar--animated {
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  animation: progress-bar-stripes 1s linear infinite;
+  background-size: 12px 12px;
+}
+
+.potent-quotable {
+  font-weight: 500 !important;
+}
+
+
+.file-processing-error-card {
+  width: 100%;
+  max-width: 550px;
+  border-radius: 10px;
+}

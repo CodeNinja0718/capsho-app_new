@@ -1,0 +1,11 @@
+@import './quasar.variables.scss';
+//@import '~quasar/dist/quasar.styl';
+@import '~quasar-styl';
+ //@import '~quasar-addon-styl';
+
+.material-icons {
+  color: black !important;
+}
+.q-drawer {
+  z-index: 99 !important;
+}

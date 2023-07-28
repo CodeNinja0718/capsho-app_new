@@ -1,0 +1,27 @@
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        },
+        {
+          "key": "Content-Security-Policy-Report-Only",
+          "value": "default-src 'self'; font-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; report-to default"
+        },
+        {
+          "key": "Expect-CT",
+          "value": "max-age=86400"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "geolocation=(), camera=(), fullscreen=*, payment=self, microphone=(), browsing-topics=()"
+        }
+      ]
+    }
+  ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
+  "outputDirectory": "dist/spa"
+}

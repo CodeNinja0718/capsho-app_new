@@ -1,0 +1,18 @@
+{
+	"plugins": [
+		"node_modules/jsdoc-vuejs"
+	],
+	"source": {
+		"include": [
+			"./src"
+		],
+		"includePattern": "\\.(vue|js)$"
+	},
+	"opts": {
+		"encoding": "utf8",
+		"destination": "docs/",
+		"template": "docstrap",
+		"recurse": true,
+		"readme": "./readme.md"
+	}
+}
